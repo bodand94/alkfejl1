@@ -1,0 +1,44 @@
+{% extends 'master' %} {% block content %}
+<div class="container">
+    <div class="row">
+        {% for course in appliedCourses %}
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{course.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Kreditszám: {{course.credit}}</p>
+                </div>
+                <div class="panel-footer">
+                    <button disabled>Felvéve</button>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %} {% for course in unappliedCourses %}
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{course.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Kreditszám: {{course.credit}}</p>
+                </div>
+                <div class="panel-footer">
+                    <form action="/apply" method="POST">
+                        {{ csrfField }}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Felvétel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

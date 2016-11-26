@@ -1,0 +1,22 @@
+{
+  "name": "neptun",
+  "version": "1.0.0",
+  "description": "neptun",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bodand94/alkfejl1.git"
+  },
+  "keywords": [
+    "neptun"
+  ],
+  "author": "Andris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bodand94/alkfejl1/issues"
+  },
+  "homepage": "https://github.com/bodand94/alkfejl1#readme"
+}
