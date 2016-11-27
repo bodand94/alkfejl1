@@ -17,7 +17,7 @@
 
 const Route = use('Route')
 
-Route.on('/').render('master')
+Route.on('/').render('main')
 
 Route.get('/login', 'UserController.renderLogin')
 Route.post('/login', 'UserController.login')
@@ -27,3 +27,7 @@ Route.post('/register', 'UserController.register')
 Route.get('/logout', 'UserController.logout');
 
 Route.get('/apply', 'CourseController.renderApplicationSite')
+Route.post('/apply', 'CourseController.applyForCourse')
+
+Route.get('/userCourses', 'CourseController.renderUserCourses')
+Route.post('/abandon', 'CourseController.abandonCourse')
