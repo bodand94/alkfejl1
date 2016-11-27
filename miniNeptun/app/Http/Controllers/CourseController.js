@@ -58,8 +58,9 @@ class CourseController {
     }
 
     *abandonCourse(req,res){
-        const courseId = req.input('course_id')
-        const application = yield Application.findBy('course_id', courseId)
+        const course_id = req.input('course_id')
+        const user_id = yield req.session.get('adonis-auth')
+        const application = yield Application.query().where('user_id', user_id).where('course_id', course_id).first()
         yield application.delete();
 
         yield res.redirect('/userCourses');
